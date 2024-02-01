@@ -47,6 +47,7 @@ return {
           fish = { "fish_indent" },
           sh = { "shfmt" },
           python = { "black", "autoflake", "autopep8" },
+          -- python = { "autoflake", "autopep8", "ruff" },
           -- Use a sub-list to run only the first available formatter
           javascript = { { "prettierd", "prettier" } },
         },
