@@ -4,5 +4,6 @@
   "pyright.inlayHints.functionReturnTypes": true,
   "pyright.inlayHints.variableTypes": true,
   "pyright.inlayHints.parameterTypes": true,
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "python.linting.pytypeEnabled": true
 }
