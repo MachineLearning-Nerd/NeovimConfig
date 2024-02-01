@@ -1,10 +1,18 @@
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
   {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
+    -- config = function()
+    --   Colors = require("catppuccin.palettes").get_palette("mocha")
+    --   require("catppuccin").setup({
+    --     color_overrides = {
+    --       mocha = {
+    --         base = "#070707",
+    --       },
+    --     },
+    --   })
+    -- end,
     opts = {
       integrations = {
         aerial = true,
