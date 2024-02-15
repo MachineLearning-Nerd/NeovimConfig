@@ -1,4 +1,5 @@
 {
+  "python.pythonPath": "/usr/bin/python3",
   "pyright.inlayHints.enable": true,
   "python.linting.pylintEnabled": true,
   "pyright.inlayHints.functionReturnTypes": true,

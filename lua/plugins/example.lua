@@ -102,6 +102,20 @@ return {
       servers = {
         -- tsserver will be automatically installed with mason and loaded with lspconfig
         tsserver = {},
+        -- pyright = {
+        --   settings = {
+        --     python = {
+        --       linting = {
+        --         pylintEnabled = true,
+        --       },
+        --     },
+        --     pyright = {
+        --       inlayHints = {
+        --         enable = true,
+        --       },
+        --     },
+        --   },
+        -- },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
