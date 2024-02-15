@@ -3,16 +3,16 @@ return {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
-    -- config = function()
-    --   Colors = require("catppuccin.palettes").get_palette("mocha")
-    --   require("catppuccin").setup({
-    --     color_overrides = {
-    --       mocha = {
-    --         base = "#070707",
-    --       },
-    --     },
-    --   })
-    -- end,
+    config = function()
+      Colors = require("catppuccin.palettes").get_palette("mocha")
+      require("catppuccin").setup({
+        color_overrides = {
+          mocha = {
+            base = "#000000",
+          },
+        },
+      })
+    end,
     opts = {
       integrations = {
         aerial = true,

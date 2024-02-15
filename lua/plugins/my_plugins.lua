@@ -50,6 +50,7 @@ return {
           -- python = { "autoflake", "autopep8", "ruff" },
           -- Use a sub-list to run only the first available formatter
           javascript = { { "prettierd", "prettier" } },
+          sql = { "sqlfmt", "sql-formatter" },
         },
         -- The options you set here will be merged with the builtin formatters.
         -- You can also define any custom formatters here.

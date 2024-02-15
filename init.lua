@@ -125,7 +125,21 @@ vim.api.nvim_set_keymap("n", "gd", "<Plug>(coc-definition)", { silent = true })
 vim.api.nvim_set_keymap("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
 vim.api.nvim_set_keymap("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 vim.api.nvim_set_keymap("n", "gr", "<Plug>(coc-references)", { silent = true })
-vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? coc#_select_confirm() : "<Tab>"', { expr = true, noremap = true })
+-- vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? coc#_select_confirm() : "<Tab>"', { expr = true, noremap = true })
+
+-- Use tab for trigger completion with characters ahead and navigate.
+-- Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin before putting this into your config.
+vim.api.nvim_set_keymap(
+  "i",
+  "<Tab>",
+  'pumvisible() ? coc#_select_confirm() : "\\<Tab>"',
+  { expr = true, noremap = true }
+)
+vim.api.nvim_set_keymap("i", "<S-TAB>", 'pumvisible() ? "\\<C-p>" : "\\<TAB>"', { expr = true, noremap = true })
+
+-- Make <CR> to accept selected completion item or notify coc.nvim to format
+-- <C-g>u breaks current undo, please make your own choice.
+vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>"', { expr = true, noremap = true })
 
 -- Use K to show documentation in preview window
 -- Error detected while processing /Users/dineshjinjala/.config/nvim/init.lua:
