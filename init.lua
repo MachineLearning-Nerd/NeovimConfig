@@ -43,6 +43,8 @@ vim.g.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 -- Equivalent of 'let mapleader = " "'
 vim.g.mapleader = " "
 
+vim.opt.wrap = true
+
 -- Equivalent of 'nnoremap <leader>h :wincmd h<CR>'
 -- vim.api.nvim_set_keymap("n", "<leader>h", ":wincmd h<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>j", ":wincmd j<CR>", { noremap = true })
@@ -127,16 +129,6 @@ vim.api.nvim_set_keymap("n", "gi", "<Plug>(coc-implementation)", { silent = true
 vim.api.nvim_set_keymap("n", "gr", "<Plug>(coc-references)", { silent = true })
 -- vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? coc#_select_confirm() : "<Tab>"', { expr = true, noremap = true })
 
--- Use tab for trigger completion with characters ahead and navigate.
--- Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin before putting this into your config.
-vim.api.nvim_set_keymap(
-  "i",
-  "<Tab>",
-  'pumvisible() ? coc#_select_confirm() : "\\<Tab>"',
-  { expr = true, noremap = true }
-)
-vim.api.nvim_set_keymap("i", "<S-TAB>", 'pumvisible() ? "\\<C-p>" : "\\<TAB>"', { expr = true, noremap = true })
-
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice.
 vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>"', { expr = true, noremap = true })
@@ -145,3 +137,6 @@ vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>
 -- Error detected while processing /Users/dineshjinjala/.config/nvim/init.lua:
 -- E81: Using <SID> not in a script context
 -- vim.api.nvim_set_keymap("n", "K", ":call <SID>show_documentation()<CR>", { silent = true })
+
+-- Equivalent of ':set noswapfile'
+vim.bo.swapfile = false

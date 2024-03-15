@@ -41,7 +41,7 @@ return {
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
+    dependencies = { "hrsh7th/cmp-emoji", "hrsh7th/cmp-nvim-lsp" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
@@ -114,6 +114,41 @@ return {
         end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "jose-elias-alvarez/nvim-lsp-ts-utils",
+      init = function()
+        require("lazyvim.util").lsp.on_attach(function(_, buffer)
+          vim.keymap.set("n", "<leader>co", "OrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+        end)
+      end,
+    },
+    opts = {
+      servers = {
+        pyright = {
+          settings = {
+            python = {
+              linting = {
+                pylintEnabled = true,
+              },
+            },
+            pyright = {
+              inlayHints = {
+                enable = true,
+              },
+            },
+          },
+        },
+      },
+      setup = {
+        pyright = function(_, opts)
+          require("nvim-lsp-ts-utils").setup({ server = opts })
+          return true
+        end,
       },
     },
   },
@@ -225,6 +260,7 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",
+      "hrsh7th/cmp-nvim-lsp",
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
