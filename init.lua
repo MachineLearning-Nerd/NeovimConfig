@@ -127,11 +127,13 @@ vim.api.nvim_set_keymap("n", "gd", "<Plug>(coc-definition)", { silent = true })
 vim.api.nvim_set_keymap("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
 vim.api.nvim_set_keymap("n", "gi", "<Plug>(coc-implementation)", { silent = true })
 vim.api.nvim_set_keymap("n", "gr", "<Plug>(coc-references)", { silent = true })
--- vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? coc#_select_confirm() : "<Tab>"', { expr = true, noremap = true })
-
+--vim.api.nvim_set_keymap("i", "<C-m>", 'pumvisible() ? coc#_select_confirm() : "<C-m>"', { expr = true, noremap = true })
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
 -- <C-g>u breaks current undo, please make your own choice.
-vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>"', { expr = true, noremap = true })
+-- vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>"', { expr = true, noremap = true })
+-- vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<CR>"', { expr = true, noremap = true })
+-- vim.api.nvim_set_keymap("i", "<C-Space>", 'pumvisible() ? "\\<C-y>" : "\\<C-Space>"', { expr = true, noremap = true })
+-- vim.api.nvim_set_keymap("i", "<A-CR>", 'pumvisible() ? "\\<C-y>" : "\\<A-CR>"', { expr = true, noremap = true })
 
 -- Use K to show documentation in preview window
 -- Error detected while processing /Users/dineshjinjala/.config/nvim/init.lua:
@@ -140,3 +142,15 @@ vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>
 
 -- Equivalent of ':set noswapfile'
 vim.bo.swapfile = false
+
+local cmp = require("cmp")
+cmp.setup({
+  enabled = false,
+})
+
+-- Enable wrap
+vim.wo.wrap = true
+
+
+-- Enable spell
+vim.wo.spell = true

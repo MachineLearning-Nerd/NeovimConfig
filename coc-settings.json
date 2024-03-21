@@ -7,6 +7,8 @@
   "pyright.inlayHints.parameterTypes": true,
   "snippets.ultisnips.pythonPrompt": false,
   "python.linting.pytypeEnabled": true,
-  "python.analysis.autoImportCompletions": true
+  "python.analysis.autoImportCompletions": true,
+  "suggest.autoTrigger": "always",
+  "suggest.enablePreselect": true
 }
 
