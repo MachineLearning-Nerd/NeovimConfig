@@ -5,6 +5,7 @@
 -- This line of code sets the s key in normal mode ('n') to work as it does in Vim. The noremap = true option ensures that the mapping is not recursive.
 vim.api.nvim_set_keymap("n", "s", "s", { noremap = true })
 vim.api.nvim_set_keymap("v", "s", "s", { noremap = true })
+-- vim.api.nvim_set_keymap("i", "<TAB>", 'pumvisible() ? "\\<C-y>" : "\\<TAB>"', { expr = true, noremap = true })
 vim.api.nvim_set_keymap("i", "<CR>", 'pumvisible() ? "\\<C-y>" : "\\<CR>"', { expr = true, noremap = true })
 
 -- This will map the F key to the Flash jump functionality. Please replace <Plug>(flash-jump) with the correct command if it’s different in your configuration

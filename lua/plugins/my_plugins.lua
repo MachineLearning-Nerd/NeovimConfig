@@ -10,7 +10,7 @@ return {
   { "ap/vim-css-color" },
 
   -- Auto Completion
-  { "neoclide/coc.nvim" },
+  { "neoclide/coc.nvim", priority = 1000 },
 
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
